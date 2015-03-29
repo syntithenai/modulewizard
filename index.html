@@ -1,0 +1,75 @@
+<html>
+<head>
+<link rel="stylesheet" href="jquery/css/smoothness/jquery-ui.css">
+  <script src="jquery/js/jquery.js"></script>
+  <script src="jquery/js/jquery-ui.js"></script>
+  <script src="index.js"></script>
+  <style>
+	  label input {margin-left: 1em;}
+	  label textarea {width: 60em; height: 8em;  margin-left: 1em;}
+	  label {vertical-align: top; display: block; width: 100%; padding-bottom: 1em;}
+	  .wizardactions,.wizardaction,.wizardsteps {
+		background: url(wizard.png) no-repeat;
+	  }
+	  .button {
+		cursor:pointer;
+		border: 1px solid black;
+		background-color: #D3D3D3;
+		border-radius: 10px;
+		margin-left: 0.4em;
+	  }
+	  #bootstrap {
+		float:right;  
+		clear: none;
+	  }
+	  #bootstrap textarea {
+		height: 40em;
+		width: 60em;
+		display: block;
+	  }
+	  .action-label {width: 40em}
+  </style>
+</head>  
+<body>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#module">Module Information</a></li>
+    <li><a id="actionsbutton" href="#actions">Actions</a></li>
+    <li><a id="generatebutton" href="#generate">Generate Code</a></li>
+  </ul>
+  <div id="module">
+    <h1>Module Documentation/Testing Wizard</h1>
+    <label>Module name<input class='moduleconfig' id='title' value='staff' /></label>
+	<label>A short description of the module<textarea class='moduleconfig' id='description' >Manage staff and payroll </textarea></label>
+	<label>List of actors<textarea class='moduleconfig' id='actors' >Staff Admin
+Staff</textarea></label>
+	<label>List of submodules<textarea class='moduleconfig' id='submodules' >Leave Applications
+Private Car Travel
+Payroll</textarea></label>
+  </div>
+  <div id="actions">
+    <div id="bootstrap">
+		<label><h3>Bootstrap Data</h3><textarea></textarea><label>
+	</div>
+	<h3>Actions</h3>
+	<div id="actionslist" >
+	</div>
+	
+  </div>
+
+  <div id='generate'>
+ <pre> 		
+	=> GENERATE
+	- action classes
+	- service class - public queries require in actions
+	- buttons (click steps)
+	- codeception tests
+	- documentation
+</pre> 		
+  </div>
+</div>
+
+</body>
+
+</html>
