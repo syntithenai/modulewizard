@@ -217,6 +217,7 @@ $(function() {
 				$.each(steps,function (s,step) {
 					thisAction.append(renderStep(step));
 				});
+				saveActions(scrapeActions());
 			});
 			list.append(wizardAction);
 			if (action.steps!=null) {
@@ -226,7 +227,7 @@ $(function() {
 			}
 			$('.action-data',list).change(function() {
 				//console.log(['change',this]);
-				saveActions(scrapeActions())
+				saveActions(scrapeActions());
 			});
 			return list;
 		}
@@ -262,10 +263,11 @@ $(function() {
 				action.steps=steps.slice();
 				thisActionList.append(renderAction(action));
 			});
+			saveActions(scrapeActions());
 		});
 		//console.log(getActions());
 		return contentObject;
 	}
-	
+	 
 });
   
